@@ -47,7 +47,7 @@
                 { 'name': 'Gan Dan', 'title': 'engineer', 'className': 'frontend1',
                 'children':
                   [
-                    { 'name': 'Yuin Atoa', 'title': 'orelha mor', 'className': 'pipeline1', 'description':"Log text here. " }
+                    { 'name': 'Yuin Atoa', 'title': 'orelha max', 'className': 'pipeline1', 'description':"Log text here. " }
                   ]
                 }
               ]
@@ -64,6 +64,11 @@
     });
 
     $('.orgchart').addClass('noncollapsable');
+    $('.contenttext').each(function(a,b) {
+      if($( this ).text() === '') {
+        $(this).hide();
+      }
+    });
 
   });
 

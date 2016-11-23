@@ -577,7 +577,7 @@
     var $nodeDiv = $('<div' + (opts.draggable ? ' draggable="true"' : '') + (nodeData[opts.nodeId] ? ' id="' + nodeData[opts.nodeId] + '"' : '') + (nodeData.parentId ? ' data-parent="' + nodeData.parentId + '"' : '') + '>')
       .addClass('node ' + (nodeData.className || '') +  (level >= opts.depth ? ' slide-up' : ''))
       .append('<div class="title">' + nodeData[opts.nodeTitle] + '</div>')
-      .append(typeof opts.nodeContent !== 'undefined' ? '<div class="content">' + (nodeData[opts.nodeContent] || '') + '</div>' : '')
+      .append(typeof opts.nodeContent !== 'undefined' ? '<div class="content contenttitle">' + (nodeData[opts.nodeContent] || '') + '</div>' : '')
       .append(typeof opts.nodeContent !== 'undefined' ? '<div class="content contenttext">' + (nodeData[opts.subContent] || '') + '</div>' : '');
     // append 4 direction arrows or expand/collapse buttons
     var flags = nodeData.relationship || '';
@@ -593,10 +593,12 @@
         $nodeDiv.append('<i class="edge horizontalEdge rightEdge fa"></i>' +
           '<i class="edge horizontalEdge leftEdge fa"></i>');
       }
-      if(Number(flags.substr(2,1))) {
-        $nodeDiv.append('<i class="edge verticalEdge bottomEdge fa"></i>')
-          .children('.title').prepend('<i class="fa '+ opts.parentNodeSymbol + ' symbol"></i>');
-      }
+
+      // if(Number(flags.substr(2,1))) {
+      //   $nodeDiv.append('<i class="edge verticalEdge bottomEdge fa"></i>')
+      //     .children('.title').prepend('<i class="fa '+ opts.parentNodeSymbol + ' symbol"></i>');
+      // }
+
     }
 
     $nodeDiv.on('mouseenter mouseleave', function(event) {

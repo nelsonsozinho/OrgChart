@@ -44,7 +44,26 @@
 }
 
 
+.orgchart .node .title {
+  height: 35px;
+  border: darkred;
+  line-height: 50px;
+}
+
 .orgchart .node .content {
+  text-overflow: inherit;
+  white-space: normal;
+  word-break: break-all;
+
+}
+
+.orgchart .node .contenttitle {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+}
+
+.orgchart .node .contenttext {
   text-overflow: inherit;
   white-space: normal;
   word-break: break-all;
